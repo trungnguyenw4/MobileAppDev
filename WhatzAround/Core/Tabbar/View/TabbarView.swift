@@ -2,11 +2,14 @@ import SwiftUI
 
 struct TabbarView: View {
     @State private var selectedTab: Int =  0
+   
+    
     
     var body: some View {
         
         TabView{
-            Text ("Home")
+            
+            GetCurrentLocationView()
                 .tabItem {
                     VStack{
                         Image(systemName: "house.fill")
@@ -18,7 +21,7 @@ struct TabbarView: View {
                     
                 }
             
-            Text ("News")
+            NewsView()
                 .tabItem {
                     VStack{
                         Image(systemName: "newspaper.fill")
@@ -30,7 +33,7 @@ struct TabbarView: View {
                     
                 }
             
-            Text ("Places")
+            SetLocationView()
                 .tabItem {
                     VStack{
                         Image(systemName: "map.circle.fill")
@@ -72,6 +75,6 @@ struct TabbarView: View {
 }
 
 
-#Preview {
-    TabbarView()
-}
+//#Preview {
+//    TabbarView()
+//}

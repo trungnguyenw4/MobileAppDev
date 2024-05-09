@@ -38,15 +38,15 @@ struct RestrictedTabbarView: View {
                 }
             
             
-            Text ("LinkAccount")
+            LinkAccountView()
                 .tabItem {
                     VStack{
                         Image(systemName: "gear.circle.fill")
-                            .environment(\.symbolVariants, selectedTab  == 4 ? . fill: .none )
-                        Text("Setting")
+                            .environment(\.symbolVariants, selectedTab  == 3 ? . fill: .none )
+                        Text("Link Account")
                         
                     }
-                    .onAppear{selectedTab = 4}
+                    .onAppear{selectedTab = 3}
                     
                 }
             

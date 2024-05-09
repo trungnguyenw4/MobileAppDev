@@ -10,6 +10,7 @@ import SwiftUI
 struct RootView: View {
     @StateObject private var viewModel = RootViewModel()
     @EnvironmentObject var authService: AuthService
+   
     
     var body: some View {
             Group {

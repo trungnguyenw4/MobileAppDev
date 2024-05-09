@@ -20,12 +20,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct ChatAppSwiftUIApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject var newsViewModel = NewsViewModel()
     @StateObject var jokeViewModel = JokeViewModel()
+    @StateObject var mapViewModel = LocationViewModel()
     
     var body: some Scene {
         WindowGroup {
            RootView()
                 .environmentObject(jokeViewModel)
+                .environmentObject(mapViewModel)
+                .environmentObject(newsViewModel)
+               
         }
     }
 }
