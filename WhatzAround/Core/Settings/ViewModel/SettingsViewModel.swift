@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class SettingsViewModel: ObservableObject {
     @Published var currentUser: User?
@@ -24,4 +25,10 @@ class SettingsViewModel: ObservableObject {
         AuthService.shared.logout()
     }
     
-}
+    func changeLocation()
+    {
+        SetLocationView()
+            
+        }
+    }
+

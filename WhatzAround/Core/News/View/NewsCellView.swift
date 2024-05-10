@@ -11,9 +11,14 @@ struct NewsCellView: View {
     let news: NewsElement
     var newsCellViewModel = NewsCellViewModel()
     
+  
+    
     @State private var isPresented: Bool = false
     
     var body: some View {
+        
+        var newsImageView =  NewsImageView(imageUrl: newsCellViewModel.modifyURL( news.link))
+        
         VStack(alignment: .leading, spacing: 8) {
             // Display news title
             Text(news.title)
@@ -25,9 +30,11 @@ struct NewsCellView: View {
                 .foregroundColor(.gray)
            
             
-            Text("Link \(newsCellViewModel.modifyURL( news.link) )")
-                .font(.subheadline)
-                .foregroundColor(.gray)
+//            Text("Link \(newsCellViewModel.modifyURL( news.link) )")
+//                .font(.subheadline)
+//                .foregroundColor(.gray)
+            
+            newsImageView
             
             // Display news description (if available)
      

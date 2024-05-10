@@ -24,4 +24,8 @@ class NewsCellViewModel:  ObservableObject {
         }
         
     }
+    
+    
+    
+    
 }
