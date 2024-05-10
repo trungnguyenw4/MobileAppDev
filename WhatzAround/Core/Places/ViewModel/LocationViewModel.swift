@@ -30,10 +30,31 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
 //            $mapLocation.eraseToAnyPublisher()
 //        }
     
+    
+    
+    
     func checkIfLocationManagerIsEnable(){
+        //let geocoder = CLGeocoder()
+        
         if CLLocationManager.locationServicesEnabled(){
             locationManager = CLLocationManager()
             locationManager?.delegate = self
+            
+            
+            getRegion()
+           
+            
+            
+            
+            
+            
+//            print(locationManager?.location!.coordinate)
+//            
+//            
+//            print(coordinates)
+            //let locationManager = locationManager
+           //geocoder.reverseGeocodeLocation(locationManager?.location!.coordinate!)
+            
         }
         else {
             print( "Please turn on your locationManager service")
@@ -41,6 +62,7 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
     }
     
     func checkLocationAuthoziration(){
+        //let geocoder = CLGeocoder()
         guard let locationManager = locationManager else {return }
         
         switch locationManager.authorizationStatus{
@@ -54,10 +76,70 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
         case .authorizedAlways, .authorizedWhenInUse:
             region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             
+            
+           
+            
         @unknown default:
             break
         }
     }
+    
+    func getRegion()  {
+        
+        guard let locationManager = locationManager else {return }
+        
+        getPlacemark(forLocation: locationManager.location!) {
+            (originPlacemark, error) in
+                if let err = error {
+                    print(err)
+                } else if let placemark = originPlacemark {
+                    self.mapLocation = placemark.subAdministrativeArea ?? ""
+                    
+//                    print( placemark.areasOfInterest?.first)
+//                    print( placemark.administrativeArea)
+//                    print( placemark.subAdministrativeArea)
+//                    print( placemark.subLocality)
+                }
+            }
+        }
+        
+    
+        //let userRegion = geocoder.reverseGeocodeLocation(locationManager.location!)
+            
+         
+        
+              // print(userRegion)
+                
+    
+    
+                
+    func getPlacemark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> ()) {
+        let geocoder = CLGeocoder()
+
+        geocoder.reverseGeocodeLocation(location, completionHandler: {
+            placemarks, error in
+
+            if let err = error {
+                completionHandler(nil, err.localizedDescription)
+            } else if let placemarkArray = placemarks {
+                if let placemark = placemarkArray.first {
+                    completionHandler(placemark, nil)
+                    
+       
+                    
+                } else {
+                    completionHandler(nil, "Placemark was nil")
+                }
+            } else {
+                completionHandler(nil, "Unknown error")
+            }
+        })
+
+       
+        
+    }
+    
+    
     
         func locationManagerDidChangeAuthorization(_ manager: CLLocationManager){
             checkLocationAuthoziration()
@@ -65,6 +147,7 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
         
         func getCoordinates() async throws {
             let geocoder = CLGeocoder()
+          
             if let placemarks = try? await geocoder.geocodeAddressString(mapLocation),
                let location = placemarks.first?.location?.coordinate {
                 

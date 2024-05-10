@@ -57,6 +57,9 @@
 		109D1D6F2BECADB200FCDDAD /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D1D6E2BECADB200FCDDAD /* NewsWebView.swift */; };
 		109D1D712BECAFBC00FCDDAD /* NewsArticleWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D1D702BECAFBC00FCDDAD /* NewsArticleWebView.swift */; };
 		109D1D742BED24FB00FCDDAD /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D1D732BED24FB00FCDDAD /* NewsCellViewModel.swift */; };
+		109D1D762BED3D9300FCDDAD /* NewsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D1D752BED3D9300FCDDAD /* NewsImageView.swift */; };
+		109D1D782BED3E8800FCDDAD /* NewsImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D1D772BED3E8800FCDDAD /* NewsImageViewModel.swift */; };
+		109D1D7B2BED481000FCDDAD /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 109D1D7A2BED481000FCDDAD /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,8 @@
 		109D1D702BECAFBC00FCDDAD /* NewsArticleWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleWebView.swift; sourceTree = "<group>"; };
 		109D1D722BED1F8D00FCDDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		109D1D732BED24FB00FCDDAD /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
+		109D1D752BED3D9300FCDDAD /* NewsImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsImageView.swift; sourceTree = "<group>"; };
+		109D1D772BED3E8800FCDDAD /* NewsImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsImageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,7 @@
 				10832F7C2BE8546B00EB3DF8 /* FirebaseDatabase in Frameworks */,
 				10832F7A2BE8546B00EB3DF8 /* FirebaseAuth in Frameworks */,
 				10832F842BE8546B00EB3DF8 /* FirebaseStorage in Frameworks */,
+				109D1D7B2BED481000FCDDAD /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +426,7 @@
 		109D1D5E2BEA36CE00FCDDAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				109D1D752BED3D9300FCDDAD /* NewsImageView.swift */,
 				109D1D602BEA370000FCDDAD /* NewsView.swift */,
 				109D1D6C2BEC841C00FCDDAD /* NewsCellView.swift */,
 				109D1D702BECAFBC00FCDDAD /* NewsArticleWebView.swift */,
@@ -433,6 +440,7 @@
 				109D1D642BEA9AF700FCDDAD /* NewsViewModel.swift */,
 				109D1D662BEC7C5200FCDDAD /* NewsListViewModel.swift */,
 				109D1D732BED24FB00FCDDAD /* NewsCellViewModel.swift */,
+				109D1D772BED3E8800FCDDAD /* NewsImageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -460,6 +468,7 @@
 				10832F7F2BE8546B00EB3DF8 /* FirebaseFirestore */,
 				10832F812BE8546B00EB3DF8 /* FirebaseFirestoreSwift */,
 				10832F832BE8546B00EB3DF8 /* FirebaseStorage */,
+				109D1D7A2BED481000FCDDAD /* SwiftSoup */,
 			);
 			productName = WhatzAround;
 			productReference = 10832F672BE8518200EB3DF8 /* WhatzAround.app */;
@@ -491,6 +500,7 @@
 			mainGroup = 10832F5E2BE8518200EB3DF8;
 			packageReferences = (
 				10832F782BE8546B00EB3DF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				109D1D792BED481000FCDDAD /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 10832F682BE8518200EB3DF8 /* Products */;
 			projectDirPath = "";
@@ -539,10 +549,12 @@
 				10832FED2BE8797300EB3DF8 /* JokeViewModel.swift in Sources */,
 				10832FBF2BE855BD00EB3DF8 /* LoginViewModel.swift in Sources */,
 				10832FEF2BE87A0000EB3DF8 /* JokeView.swift in Sources */,
+				109D1D782BED3E8800FCDDAD /* NewsImageViewModel.swift in Sources */,
 				109D1D742BED24FB00FCDDAD /* NewsCellViewModel.swift in Sources */,
 				10832FF52BE8DC3A00EB3DF8 /* LinkAccountViewModel.swift in Sources */,
 				10832FDA2BE85DCE00EB3DF8 /* SettingsOptions.swift in Sources */,
 				109D1D612BEA370000FCDDAD /* NewsView.swift in Sources */,
+				109D1D762BED3D9300FCDDAD /* NewsImageView.swift in Sources */,
 				10832FF32BE8DC2800EB3DF8 /* LinkAccountView.swift in Sources */,
 				109D1D6F2BECADB200FCDDAD /* NewsWebView.swift in Sources */,
 				109D1D672BEC7C5200FCDDAD /* NewsListViewModel.swift in Sources */,
@@ -777,6 +789,14 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		109D1D792BED481000FCDDAD /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -809,6 +829,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10832F782BE8546B00EB3DF8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		109D1D7A2BED481000FCDDAD /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 109D1D792BED481000FCDDAD /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

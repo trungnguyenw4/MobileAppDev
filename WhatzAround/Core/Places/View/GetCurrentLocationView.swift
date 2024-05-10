@@ -10,7 +10,11 @@ import MapKit
 
 struct GetCurrentLocationView: View {
 
-    @ObservedObject var mapViewModel = LocationViewModel()
+    //@ObservedObject var mapViewModel = LocationViewModel()
+    
+    @EnvironmentObject var mapViewModel : LocationViewModel
+        
+    //@State var mapLocation = ""
     
     var body: some View {
         Map(coordinateRegion: $mapViewModel.region,
@@ -20,6 +24,8 @@ struct GetCurrentLocationView: View {
                 Task{
                     mapViewModel.checkIfLocationManagerIsEnable()
                    
+                    //print(mapViewModel.mapLocation)
+                    
                 }
             }
     }
