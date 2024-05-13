@@ -26,14 +26,14 @@ struct SettingsView: View {
                 .background(Color(.systemGray6))
                 .toolbar{
                     ToolbarItem(placement: .topBarLeading) {
-                       Text("Menu")
+                       Text("Setting")
                             .font(.title)
                             .fontWeight(.bold)
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         HStack(spacing: 24) {
-                            Image(systemName: "gearshape.fill")
-                            Image(systemName: "magnifyingglass")
+                            Image(systemName: "gearshape.gear")
+                            
                                 
                         }
                         .fontWeight(.bold)
@@ -55,9 +55,6 @@ struct SettingsListView: View {
     }
     var body: some View {
         VStack {
-            SettingsItem(title: "Help & support", imageName: "questionmark.circle.fill")
-            SettingsItem(title: "Settings & privacy", imageName: "gearshape.fill")
-            
             
             NavigationLink {
                 SetLocationView()

@@ -10,6 +10,11 @@ import SwiftUI
 struct RegistrationView: View {
     @StateObject private var viewModel = RegistrationViewModel()
     @Environment(\.dismiss) private var dismiss
+   
+    
+
+    
+    
     var body: some View {
         VStack {
             Spacer()
@@ -28,11 +33,19 @@ struct RegistrationView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
-                    .frame(width: 360,height: 44)
-                    .background(.green)
+                    .frame(width: 280,height: 20)
+                   
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+            .disabled( viewModel.email.isEmpty || viewModel.password.isEmpty)
+            .buttonStyle(BrightButtonStyle(disabled: viewModel.password.isEmpty || viewModel.email.isEmpty))
             .padding(.vertical)
+            .alert("Invalid Email", isPresented: $viewModel.showInvalidEmailAlert) {
+                            Button("OK", role: .cancel) {}
+                        }
+            .alert("Password is too weak", isPresented: $viewModel.showInvalidPasswordAlert) {
+                            Button("OK", role: .cancel) {}
+                        }
             Spacer()
             Divider()
             Button {
@@ -40,7 +53,7 @@ struct RegistrationView: View {
             } label: {
                 HStack(spacing: 3) {
                     Text("Already have an account?")
-                    Text("Sign in")
+                    Text("Log in")
                         .fontWeight(.semibold)
                 }
                 .font(.footnote)
@@ -51,6 +64,6 @@ struct RegistrationView: View {
     }
 }
 
-#Preview {
-    RegistrationView()
-}
+//#Preview {
+//    RegistrationView()
+//}

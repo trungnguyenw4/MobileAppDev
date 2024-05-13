@@ -67,20 +67,44 @@ struct LoginView: View {
                 // login button
                 Button {
                     Task { try await viewModel.login() }
-                } label: {
+                } 
+            
+            label: {
                     Text("Login")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
-                        .frame(width: 360,height: 44)
-                        .background(.green)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .frame(width: 100,height: 30)
+                        
+                       
                 }
+            .disabled(viewModel.password.isEmpty || viewModel.email.isEmpty)
+            .buttonStyle(BrightButtonStyle(disabled: viewModel.password.isEmpty || viewModel.email.isEmpty))
                 .padding(.vertical)
                 Spacer()
                 // signup link
                 Divider()
                 
+                
+         
+                NavigationLink {
+                    RegistrationView()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    HStack(spacing: 3) {
+                        Text("Don't have an account?")
+                        Text("Register")
+                            .fontWeight(.semibold)
+                       
+                    }
+                    .font(.footnote)
+                    .foregroundStyle(.gray)
+                }
+                .padding(.vertical)
+                
+                
+                Text("or")
+                    .fontWeight(.semibold)
                 
                 Button {
                     Task { try await  viewModel.logInAnonymously() }
@@ -89,33 +113,22 @@ struct LoginView: View {
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
-                        .frame(width: 360,height: 44)
-                        .background(.green)
+                        .frame(width: 280,height: 20)
+                       
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
+                .buttonStyle(BrightButtonStyle())
                 .padding(.vertical)
                 
                 
                 Divider()
-                NavigationLink {
-                    RegistrationView()
-                        .navigationBarBackButtonHidden()
-                } label: {
-                    HStack(spacing: 3) {
-                        Text("Don't have an account?")
-                        Text("Sign Up")
-                            .fontWeight(.semibold)
-                    }
-                    .font(.footnote)
-                    .foregroundStyle(.gray)
-                }
-                .padding(.vertical)
+                
 
             }
         }
     }
 }
 
-#Preview {
-    LoginView()
-}
+//#Preview {
+//    LoginView()
+//}

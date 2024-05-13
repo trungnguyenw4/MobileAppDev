@@ -26,18 +26,4 @@ class LoginViewModel: ObservableObject {
         }
     
     
-//    func sendCode() {
-//        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
-//        let number = "+21653615510"
-//        PhoneAuthProvider.provider().verifyPhoneNumber(number, uiDelegate: nil) { (code,error) in
-//            if let error = error {
-//                self.errorMsg = error.localizedDescription
-//                self.error.toggle()
-//                return
-//            }
-//            self.code = code ?? ""
-//            self.goToVerify = true
-//             NavigationLink(destination: Verification(oginData: loginData),isActive: $loginData.goToVerify)
-//        }
-//    }
 

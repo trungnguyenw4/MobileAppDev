@@ -9,8 +9,12 @@ import SwiftUI
 
 struct LinkAccountView: View {
         @StateObject private var viewModel = LinkAccountViewModel()
+    
+    
         var body: some View {
+            @State var isDisabled = true
             NavigationStack {
+                
                 VStack {
                     Spacer()
                     // logo image
@@ -62,16 +66,26 @@ struct LinkAccountView: View {
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundStyle(.white)
-                            .frame(width: 360,height: 44)
-                            .background(.green)
+                            .frame(width: 280,height: 20)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
-                    .padding(.vertical)
+                    .buttonStyle(BrightButtonStyle(disabled: viewModel.email.isEmpty || viewModel.password.isEmpty))
                     
+                    .disabled( viewModel.email.isEmpty || viewModel.password.isEmpty)
+                    .padding(.vertical)
+                    .alert("Invalid Email", isPresented: $viewModel.showInvalidEmailAlert) {
+                                    Button("OK", role: .cancel) {}
+                                }
+                    .alert("Password is too weak", isPresented: $viewModel.showInvalidPasswordAlert) {
+                                    Button("OK", role: .cancel) {}
+                                }
               
-
-                }
+                    Spacer()
+                    Spacer()}
+                Spacer()
+                
             }
+            .padding()
         }
     }
 

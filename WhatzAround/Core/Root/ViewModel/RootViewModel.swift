@@ -14,9 +14,11 @@ class RootViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     private var cancellable = Set<AnyCancellable>()
     private var authService = AuthService.shared
+   
     
     init() {
        setupSubscribers()
+       
     }
     
      private func setupSubscribers() {

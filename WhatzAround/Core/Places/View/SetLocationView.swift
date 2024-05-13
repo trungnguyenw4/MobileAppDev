@@ -5,12 +5,13 @@
 //  Created by Trung Nguyen on 07/05/2024.
 //
 
+import Firebase
 import SwiftUI
 import MapKit
 
 struct SetLocationView:  View {
     
-    //@StateObject var mapViewModel = LocationViewModel()
+
     
     @EnvironmentObject var mapViewModel : LocationViewModel
         
@@ -23,10 +24,11 @@ struct SetLocationView:  View {
                 
                 VStack(spacing:20) {
                    
+                    Text("Current Location: ")
                     
                     HStack {
                         
-                        TextField("Enter the Location", text: $mapViewModel.mapLocation)
+                        TextField("", text: $mapViewModel.mapLocation)
                             .padding()
                             .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 3)
                         
@@ -42,7 +44,7 @@ struct SetLocationView:  View {
                             do {
                                 try await mapViewModel.getCoordinates()
                  
-                                try await mapViewModel.setAnnotations()
+                                //try await mapViewModel.setAnnotations()
                                 
                             } catch {
                                 // Handle the error if geocoding fails.
@@ -55,42 +57,16 @@ struct SetLocationView:  View {
                         mapLocation = mapViewModel.mapLocation // Question: Explain how this is being used?
                         
                     }) {
-                        Text("Show Map")
+                        
+                        
+                        Text("Set Location")
                             .font(.headline)
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.black)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-                    VStack(spacing:5){
-                        // Question:    What happens if there are no coordinates?
-                        if mapViewModel.coordinates != nil {
-                            // Question:   What location is shown on the map and how is that achieved?
-                            Map(coordinateRegion: $mapViewModel.region, showsUserLocation: true, userTrackingMode: .none, annotationItems: mapViewModel.annotations) {
-                                
-                                place in
-                                MapAnnotation(coordinate: place.location) {
-                                    VStack {
-                                        Image(systemName: "mappin.circle.fill")
-                                            .resizable()
-                                            .frame(width: 40, height: 40)
-                                            .foregroundColor(.green) //
-                                        Text(place.name)
-                                            .font(.footnote)
-                                        Text(place.name)
-                                            .font(.caption)
-                                    }
-                                }
-                            }
-                      
-                            
-                            .cornerRadius(10)
-                            
-      
-                            
-                        }
-                    }
-                    .frame(height:300)
+
                     .padding()
                     
                     

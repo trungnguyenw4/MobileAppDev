@@ -13,40 +13,29 @@ struct RestrictedTabbarView: View {
     var body: some View {
         
         TabView{
-            Text ("Home")
+            JokeView()
                 .tabItem {
                     VStack{
-                        Image(systemName: "house.fill")
-                            .environment(\.symbolVariants, selectedTab  == 0 ? . fill: .none )
-                        Text("Home")
-                        
-                    }
-                    .onAppear{selectedTab = 0}
-                    
-                }
-            
-            Text ("News")
-                .tabItem {
-                    VStack{
-                        Image(systemName: "newspaper.fill")
+                        Image(systemName: "eyes.inverse")
                             .environment(\.symbolVariants, selectedTab  == 1 ? . fill: .none )
-                        Text("News")
+                        Text("JK")
                         
                     }
                     .onAppear{selectedTab = 1}
                     
                 }
+        
             
             
             LinkAccountView()
                 .tabItem {
                     VStack{
                         Image(systemName: "gear.circle.fill")
-                            .environment(\.symbolVariants, selectedTab  == 3 ? . fill: .none )
+                            .environment(\.symbolVariants, selectedTab  ==  2 ? . fill: .none )
                         Text("Link Account")
                         
                     }
-                    .onAppear{selectedTab = 3}
+                    .onAppear{selectedTab = 2}
                     
                 }
             
