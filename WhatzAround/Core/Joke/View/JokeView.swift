@@ -15,6 +15,7 @@ struct JokeView: View {
     @EnvironmentObject var jokeViewModel: JokeViewModel
 
     var body: some View {
+        
         VStack(spacing: 10)
         {
             if let  jokeData = jokeViewModel.joke {
@@ -27,12 +28,19 @@ struct JokeView: View {
                 // You can show a loading indicator or placeholder text here
                 Text("Loading...")
             }
+               
             
             
             Button(  action:{  jokeViewModel.loadFileData()}  )
             {
              Text("Get New Joke")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    
             }
+            .foregroundColor(.white)
+            .background(.black)
+      
             
         }
         
@@ -46,8 +54,8 @@ struct JokeView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        JokeView()
+//    }
+//}

@@ -20,37 +20,37 @@ struct WelcomeView: View {
                     .resizable()
                     .frame(width: proxy.size.width - 80 , height: proxy.size.width - 60)
                     .scaledToFill()
-                VStack(spacing: 20) {
-                    Text("Welcome to WhatzAround")
+                VStack {
+                            Text("Welcome to WhatzAround")
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text("Read our ")
-                        .foregroundStyle(.gray) +
-                    Text("Privacy Policy")
-                        .foregroundStyle(.blue) +
-                    Text(". Tap Agree and continue to accept the ")
-                        .foregroundStyle(.gray) +
-                    Text("Terms of Service")
-                        .foregroundStyle(.blue)
-                    Capsule()
-                        .fill(Color(.systemGray5))
-                        .frame(width: 160, height: 40)
-                        .overlay {
-                            HStack {
-                                Image(systemName: "network")
-                                Spacer()
-                                Text("English")
-                                Spacer()
-                                Image(systemName: "chevron.down")
-                            }
-                            .foregroundStyle(Color(.darkGray))
-                            .padding(.horizontal)
+                                 
+                                 Text("Tap Agree and continue to accept the Terms of Service")
+                                .font(.body)
+                                .foregroundColor(.black)
+                                .padding()
+                            
+                            Text("Privacy Policy")
+                                .foregroundColor(.blue)
+                                .underline()
+                                .onTapGesture {
+                                    if let url = URL(string: "https://www.termsfeed.com/live/1d2bfaab-6e54-461c-8bf6-21381b829b3b") {
+                                        UIApplication.shared.open(url)
+                                    }
+                                }
+                                .padding(.bottom, 4) // Add some spacing between the links
+                            
+                            Text("Terms of Service")
+                                .foregroundColor(.blue)
+                                .underline()
+                                .onTapGesture {
+                                    if let url = URL(string: "https://www.termsfeed.com/live/ad4a7645-b187-4f02-bff9-3487985617ba") {
+                                        UIApplication.shared.open(url)
+                                    }
+                                }
+                            
+                            Spacer()
                         }
-                }
-                .font(.subheadline)
-                .padding(.top,24)
-                .padding(.horizontal)
-                Spacer()
                 Button {
                     showLoginView.toggle()
                 } label: {
@@ -59,9 +59,10 @@ struct WelcomeView: View {
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
                         .frame(width: UIScreen.main.bounds.width - 80, height: 44)
-                        .background(Color(.darkGray))
+                        .background(Color.black)
                         .clipShape(RoundedRectangle(cornerRadius: 30))
                 }
+               
                 .padding(.vertical)
             }
             .padding(.horizontal)
@@ -72,6 +73,6 @@ struct WelcomeView: View {
     }
 }
 
-#Preview {
-    WelcomeView()
-}
+//#Preview {
+//    WelcomeView()
+//}

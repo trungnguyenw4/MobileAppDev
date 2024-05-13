@@ -10,10 +10,13 @@ import SwiftUI
 import CoreLocation
 import MapKit
 import Combine
+import FirebaseFirestore
 
 //there is a button for entering data, fixed termm search
 
 class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate {
+    
+    @Published var currentUser: User?
     
     @Published var mapLocation: String = ""
     
@@ -23,14 +26,68 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
     
     @Published var locationManager: CLLocationManager?
     
-    @Published var annotations: [PlaceAnnotation] = [] // Published property to hold place annotations.
+    //@Published var annotations: [PlaceAnnotation] = [] // Published property to hold place annotations.
     
     
-//    var mapLocationPublisher: AnyPublisher<String, Never> {
-//            $mapLocation.eraseToAnyPublisher()
+    //    var mapLocationPublisher: AnyPublisher<String, Never> {
+    //            $mapLocation.eraseToAnyPublisher()
+    //        }
+    
+    
+    func updateLocationOnFirebase(currentUser:User) async {
+        
+        
+        let db = Firestore.firestore()
+        let documentRef = db.collection("users").document(currentUser.id)
+
+        do {
+            let document = try await documentRef.getDocument()
+            
+            if document.exists {
+                // Document exists, update the country field
+                try await documentRef.updateData(["location": self.mapLocation])
+                print("Document successfully updated")
+            } else {
+                print("Document does not exist")
+            }
+        } catch {
+            print("Error updating document: \(error)")
+        }
+    }
+    
+    
+//    func saveLocationToFireBase(currentUser:User) async -> Bool
+//    {
+//        let db = Firestore.firestore()
+//        
+//        let documentRef = db.collection("users").document(currentUser.id)
+//        
+//        documentRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                // Document exists, update the country field
+//                documentRef.updateData(["country": "New Country"]) { error in
+//                    if let error = error {
+//                        print("Error updating document: \(error)")
+//                    } else {
+//                        print("Document successfully updated")
+//                    }
+//                }
+//            } else {
+//                print("Document does not exist")
+//            }
 //        }
-    
-    
+//    }
+        
+        
+//        if let id = currentUser.id {
+//            do {await db.collection("users").document(id).setData("location", mapLocation)
+//                
+//            } catch {
+//                print ("Can not execute")
+//            }
+//            
+//        }
+
     
     
     func checkIfLocationManagerIsEnable(){
@@ -163,6 +220,9 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
             }
         }
         
+    
+
+    
         func setAnnotations() async throws {
             let request = MKLocalSearch.Request()
             print("0...request:   ", request)
@@ -181,12 +241,12 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
                 }
                 DispatchQueue.main.async
                 {
-                    self.annotations = []
+                    //self.annotations = []
                     for item in items {
                         //print(item.name as Any)
                         if let location = item.placemark.location?.coordinate {
                             let place = PlaceAnnotation(name: item.name ?? "Undefined", location: location)
-                            self.annotations.append(place)
+                            //self.annotations.append(place)
                         }
                     }
                 }

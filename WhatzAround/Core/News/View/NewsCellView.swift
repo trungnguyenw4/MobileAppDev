@@ -29,18 +29,10 @@ struct NewsCellView: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
            
-            
-//            Text("Link \(newsCellViewModel.modifyURL( news.link) )")
-//                .font(.subheadline)
-//                .foregroundColor(.gray)
-            
+
+            // Display news photo
             newsImageView
             
-            // Display news description (if available)
-     
-            
-            // Display news photo (if available)
-            // Add your photo display logic here
             
             Divider()
         }

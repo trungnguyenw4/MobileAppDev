@@ -12,9 +12,9 @@ struct TabbarView: View {
             GetCurrentLocationView()
                 .tabItem {
                     VStack{
-                        Image(systemName: "house.fill")
+                        Image(systemName: "safari.fill")
                             .environment(\.symbolVariants, selectedTab  == 0 ? . fill: .none )
-                        Text("Home")
+                        Text("LocateMe")
                         
                     }
                     .onAppear{selectedTab = 0}
@@ -33,7 +33,8 @@ struct TabbarView: View {
                     
                 }
             
-            SetLocationView()
+            //SetLocationView()
+            FamousPlacesNearByView()
                 .tabItem {
                     VStack{
                         Image(systemName: "map.circle.fill")
