@@ -15,7 +15,7 @@ class LinkAccountViewModel: ObservableObject {
     @Published var showInvalidPasswordAlert: Bool = false
     
     private let emailRegexPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-    private let passwordRegexPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{5,24}$"
+    private let passwordRegexPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{6,24}$"
     
     private func isValidEmail(_ email: String) -> Bool {
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegexPattern)
