@@ -14,10 +14,10 @@ struct LoginView: View {
             VStack {
                 Spacer()
                 // logo image
-                Image("logo")
+                Image("stewie")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 380, height: 270)
                     .padding()
                 // textfields
                 VStack {

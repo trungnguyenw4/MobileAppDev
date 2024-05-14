@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State private var showLoginView: Bool = false
-    
+    @EnvironmentObject var mapViewModel : LocationViewModel
     var body: some View {
         GeometryReader{proxy in
             VStack{
@@ -53,6 +53,7 @@ struct WelcomeView: View {
                         }
                 Button {
                     showLoginView.toggle()
+                    mapViewModel.checkIfLocationManagerIsEnable()
                 } label: {
                     Text("Agree and continue")
                         .font(.subheadline)

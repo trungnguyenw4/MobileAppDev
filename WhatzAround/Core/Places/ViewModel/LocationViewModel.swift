@@ -16,7 +16,7 @@ import FirebaseFirestore
 
 class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate {
     
-    @Published var currentUser: User?
+    //@Published var currentUser: User?
     
     @Published var mapLocation: String = ""
     
@@ -34,60 +34,27 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
     //        }
     
     
-    func updateLocationOnFirebase(currentUser:User) async {
-        
-        
-        let db = Firestore.firestore()
-        let documentRef = db.collection("users").document(currentUser.id)
-
-        do {
-            let document = try await documentRef.getDocument()
-            
-            if document.exists {
-                // Document exists, update the country field
-                try await documentRef.updateData(["location": self.mapLocation])
-                print("Document successfully updated")
-            } else {
-                print("Document does not exist")
-            }
-        } catch {
-            print("Error updating document: \(error)")
-        }
-    }
-    
-    
-//    func saveLocationToFireBase(currentUser:User) async -> Bool
-//    {
+//    func updateLocationOnFirebase(currentUser:User) async {
+//        
+//        
 //        let db = Firestore.firestore()
-//        
 //        let documentRef = db.collection("users").document(currentUser.id)
-//        
-//        documentRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
+//
+//        do {
+//            let document = try await documentRef.getDocument()
+//            
+//            if document.exists {
 //                // Document exists, update the country field
-//                documentRef.updateData(["country": "New Country"]) { error in
-//                    if let error = error {
-//                        print("Error updating document: \(error)")
-//                    } else {
-//                        print("Document successfully updated")
-//                    }
-//                }
+//                try await documentRef.updateData(["location": self.mapLocation])
+//                print("Document successfully updated")
 //            } else {
 //                print("Document does not exist")
 //            }
+//        } catch {
+//            print("Error updating document: \(error)")
 //        }
 //    }
-        
-        
-//        if let id = currentUser.id {
-//            do {await db.collection("users").document(id).setData("location", mapLocation)
-//                
-//            } catch {
-//                print ("Can not execute")
-//            }
-//            
-//        }
-
+    
     
     
     func checkIfLocationManagerIsEnable(){
@@ -95,22 +62,13 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
         
         if CLLocationManager.locationServicesEnabled(){
             locationManager = CLLocationManager()
-            locationManager?.delegate = self
-            
+            //guard let locationManager = locationManager else {return }
+            locationManager!.delegate = self
+            print("1st check")
+            print(locationManager!.location)
             
             getRegion()
            
-            
-            
-            
-            
-            
-//            print(locationManager?.location!.coordinate)
-//            
-//            
-//            print(coordinates)
-            //let locationManager = locationManager
-           //geocoder.reverseGeocodeLocation(locationManager?.location!.coordinate!)
             
         }
         else {
@@ -131,10 +89,10 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
         case .denied:
             print("Your location service is being denied. Go into settings to enable it")
         case .authorizedAlways, .authorizedWhenInUse:
-            region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            region = MKCoordinateRegion(center: locationManager.location!.coordinate  , span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             
             
-           
+           //CLLocationCoordinate2D(latitude: 40, longitude: 120)
             
         @unknown default:
             break
@@ -143,9 +101,14 @@ class LocationViewModel: NSObject,  ObservableObject, CLLocationManagerDelegate 
     
     func getRegion()  {
         
-        guard let locationManager = locationManager else {return }
+        guard let locationManager = locationManager
         
-        getPlacemark(forLocation: locationManager.location!) {
+        
+        else {return }
+        print("2nd check")
+        print(locationManager.location)
+        
+        getPlacemark(forLocation: locationManager.location! ) {
             (originPlacemark, error) in
                 if let err = error {
                     print(err)

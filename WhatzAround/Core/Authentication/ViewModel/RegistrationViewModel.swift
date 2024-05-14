@@ -19,7 +19,7 @@ class RegistrationViewModel: ObservableObject {
     @Published var showInvalidPasswordAlert: Bool = false
     
     private let emailRegexPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-    private let passwordRegexPattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/"
+    private let passwordRegexPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{5,24}$"
     
     // Function to validate an email address using regex
     private func isValidEmail(_ email: String) -> Bool {
