@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		106B4D692BF2743A00C21961 /* BrightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4D682BF2743A00C21961 /* BrightButton.swift */; };
 		106B4D6B2BF2800900C21961 /* ValidateEmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B4D6A2BF2800900C21961 /* ValidateEmailService.swift */; };
+		106B4D712BF2A99900C21961 /* Brian_Griffin.png in Resources */ = {isa = PBXBuildFile; fileRef = 106B4D6E2BF2A99900C21961 /* Brian_Griffin.png */; };
+		106B4D742BF2A9F200C21961 /* stewie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 106B4D722BF2A9F200C21961 /* stewie.jpg */; };
+		106B4D752BF2A9F200C21961 /* peter.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 106B4D732BF2A9F200C21961 /* peter.jpeg */; };
+		106B4D772BF2AAB400C21961 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 106B4D762BF2AAB400C21961 /* GoogleService-Info.plist */; };
+		106B4D792BF2AEA500C21961 /* family-guy-characters.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 106B4D782BF2AEA400C21961 /* family-guy-characters.jpg */; };
+		106B4D7B2BF2B05800C21961 /* FamilyGuy_2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 106B4D7A2BF2B05800C21961 /* FamilyGuy_2017.jpg */; };
 		10832F6B2BE8518200EB3DF8 /* WhatzAroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10832F6A2BE8518200EB3DF8 /* WhatzAroundApp.swift */; };
 		10832F6F2BE8518400EB3DF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10832F6E2BE8518400EB3DF8 /* Assets.xcassets */; };
 		10832F722BE8518400EB3DF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10832F712BE8518400EB3DF8 /* Preview Assets.xcassets */; };
@@ -33,7 +39,6 @@
 		10832FDE2BE85ED700EB3DF8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10832FDD2BE85ED700EB3DF8 /* ProfileView.swift */; };
 		10832FE02BE85EE800EB3DF8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10832FDF2BE85EE800EB3DF8 /* ProfileViewModel.swift */; };
 		10832FE22BE86D9700EB3DF8 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10832FE12BE86D9700EB3DF8 /* SettingsItem.swift */; };
-		10832FE62BE8770B00EB3DF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10832FE52BE8770B00EB3DF8 /* GoogleService-Info.plist */; };
 		10832FED2BE8797300EB3DF8 /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10832FEC2BE8797300EB3DF8 /* JokeViewModel.swift */; };
 		10832FEF2BE87A0000EB3DF8 /* JokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10832FEE2BE87A0000EB3DF8 /* JokeView.swift */; };
 		10832FF12BE8CE1F00EB3DF8 /* RestrictedTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10832FF02BE8CE1F00EB3DF8 /* RestrictedTabbarView.swift */; };
@@ -71,6 +76,12 @@
 /* Begin PBXFileReference section */
 		106B4D682BF2743A00C21961 /* BrightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightButton.swift; sourceTree = "<group>"; };
 		106B4D6A2BF2800900C21961 /* ValidateEmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailService.swift; sourceTree = "<group>"; };
+		106B4D6E2BF2A99900C21961 /* Brian_Griffin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brian_Griffin.png; sourceTree = "<group>"; };
+		106B4D722BF2A9F200C21961 /* stewie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stewie.jpg; sourceTree = "<group>"; };
+		106B4D732BF2A9F200C21961 /* peter.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = peter.jpeg; sourceTree = "<group>"; };
+		106B4D762BF2AAB400C21961 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		106B4D782BF2AEA400C21961 /* family-guy-characters.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "family-guy-characters.jpg"; sourceTree = "<group>"; };
+		106B4D7A2BF2B05800C21961 /* FamilyGuy_2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FamilyGuy_2017.jpg; sourceTree = "<group>"; };
 		10832F672BE8518200EB3DF8 /* WhatzAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatzAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10832F6A2BE8518200EB3DF8 /* WhatzAroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatzAroundApp.swift; sourceTree = "<group>"; };
 		10832F6E2BE8518400EB3DF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,7 +101,6 @@
 		10832FDD2BE85ED700EB3DF8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		10832FDF2BE85EE800EB3DF8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		10832FE12BE86D9700EB3DF8 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
-		10832FE52BE8770B00EB3DF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10832FEC2BE8797300EB3DF8 /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
 		10832FEE2BE87A0000EB3DF8 /* JokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeView.swift; sourceTree = "<group>"; };
 		10832FF02BE8CE1F00EB3DF8 /* RestrictedTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictedTabbarView.swift; sourceTree = "<group>"; };
@@ -146,10 +156,10 @@
 		10832F5E2BE8518200EB3DF8 = {
 			isa = PBXGroup;
 			children = (
+				106B4D762BF2AAB400C21961 /* GoogleService-Info.plist */,
 				10B72A192BF1CCEF00D4B976 /* App */,
 				10B72A122BF1CCD900D4B976 /* Model */,
 				10B72A072BF1CCC800D4B976 /* Service */,
-				10832FE52BE8770B00EB3DF8 /* GoogleService-Info.plist */,
 				10B72A012BF1CCA100D4B976 /* Utils */,
 				10832FA92BE855BD00EB3DF8 /* Core */,
 				10832F692BE8518200EB3DF8 /* WhatzAround */,
@@ -170,7 +180,12 @@
 			children = (
 				109D1D722BED1F8D00FCDDAD /* Info.plist */,
 				10832F6A2BE8518200EB3DF8 /* WhatzAroundApp.swift */,
+				106B4D782BF2AEA400C21961 /* family-guy-characters.jpg */,
+				106B4D7A2BF2B05800C21961 /* FamilyGuy_2017.jpg */,
 				10832F6E2BE8518400EB3DF8 /* Assets.xcassets */,
+				106B4D6E2BF2A99900C21961 /* Brian_Griffin.png */,
+				106B4D732BF2A9F200C21961 /* peter.jpeg */,
+				106B4D722BF2A9F200C21961 /* stewie.jpg */,
 				10832F872BE854C800EB3DF8 /* familyguys.jpg */,
 				10832F702BE8518400EB3DF8 /* Preview Content */,
 			);
@@ -530,10 +545,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106B4D742BF2A9F200C21961 /* stewie.jpg in Resources */,
+				106B4D792BF2AEA500C21961 /* family-guy-characters.jpg in Resources */,
 				10832F722BE8518400EB3DF8 /* Preview Assets.xcassets in Resources */,
-				10832FE62BE8770B00EB3DF8 /* GoogleService-Info.plist in Resources */,
+				106B4D712BF2A99900C21961 /* Brian_Griffin.png in Resources */,
+				106B4D7B2BF2B05800C21961 /* FamilyGuy_2017.jpg in Resources */,
+				106B4D752BF2A9F200C21961 /* peter.jpeg in Resources */,
 				10832F6F2BE8518400EB3DF8 /* Assets.xcassets in Resources */,
 				10832F882BE854C800EB3DF8 /* familyguys.jpg in Resources */,
+				106B4D772BF2AAB400C21961 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +754,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -764,6 +785,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

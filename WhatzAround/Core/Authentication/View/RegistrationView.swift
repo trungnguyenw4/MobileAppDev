@@ -19,17 +19,17 @@ struct RegistrationView: View {
         VStack {
             Spacer()
             // logo image
-            Image("logo")
+            Image("Brian_Griffin")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 150, height: 150)
+                .frame(width: 250, height: 250)
                 .padding()
             // textfields
             FloatingTextFieldsView(viewModel: viewModel)
             Button {
                 Task { try await viewModel.createUser() }
             } label: {
-                Text("Sign Up")
+                Text("Register")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
@@ -43,7 +43,7 @@ struct RegistrationView: View {
             .alert("Invalid Email", isPresented: $viewModel.showInvalidEmailAlert) {
                             Button("OK", role: .cancel) {}
                         }
-            .alert("Password is too weak", isPresented: $viewModel.showInvalidPasswordAlert) {
+            .alert("PW needs >6 chars and requires at least 1 special and 1 upper case", isPresented: $viewModel.showInvalidPasswordAlert) {
                             Button("OK", role: .cancel) {}
                         }
             Spacer()

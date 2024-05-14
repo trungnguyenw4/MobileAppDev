@@ -23,8 +23,8 @@ struct GetCurrentLocationView: View {
             .onAppear {
                 Task{
                     mapViewModel.checkIfLocationManagerIsEnable()
-                   
-                    //print(mapViewModel.mapLocation)
+                    //mapViewModel.getRegion()
+                    print(mapViewModel.mapLocation)
                     
                 }
             }

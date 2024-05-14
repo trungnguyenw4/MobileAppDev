@@ -18,10 +18,10 @@ struct LinkAccountView: View {
                 VStack {
                     Spacer()
                     // logo image
-                    Image("logo")
+                    Image("peter")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 150, height: 150)
+                        .frame(width: 220, height: 220)
                         .padding()
                     // textfields
                     VStack {
@@ -76,7 +76,7 @@ struct LinkAccountView: View {
                     .alert("Invalid Email", isPresented: $viewModel.showInvalidEmailAlert) {
                                     Button("OK", role: .cancel) {}
                                 }
-                    .alert("Password is too weak", isPresented: $viewModel.showInvalidPasswordAlert) {
+                    .alert("PW needs >6 chars and requires at least 1 special and 1 upper case", isPresented: $viewModel.showInvalidPasswordAlert) {
                                     Button("OK", role: .cancel) {}
                                 }
               
@@ -89,6 +89,6 @@ struct LinkAccountView: View {
         }
     }
 
-#Preview {
-    LinkAccountView()
-}
+//#Preview {
+//    LinkAccountView()
+//}
