@@ -1,6 +1,6 @@
 //
 //  User.swift
-//  What'sNews
+//  WhatzAround
 //
 //  Created by Trung Nguyen on 05/05/2024.
 //

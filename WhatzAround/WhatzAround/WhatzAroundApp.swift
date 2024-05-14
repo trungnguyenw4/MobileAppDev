@@ -17,7 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct ChatAppSwiftUIApp: App {
+struct WhatzAroundSwiftUIApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject var newsViewModel = NewsViewModel()

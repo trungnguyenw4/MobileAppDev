@@ -1,5 +1,5 @@
 //
-//  JokeModel.swift
+//  Joke.swift
 //  WhatzAround
 //
 //  Created by Trung Nguyen on 06/05/2024.

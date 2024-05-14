@@ -1,6 +1,6 @@
 //
 //  RootView.swift
-//  What'sNews
+//  WhatzAround
 //
 //  Created by Trung Nguyen on 06/05/2024.
 //

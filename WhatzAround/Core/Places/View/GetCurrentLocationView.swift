@@ -22,8 +22,11 @@ struct GetCurrentLocationView: View {
             userTrackingMode: .none)
             .onAppear {
                 Task{
+                    //mapViewModel.checkLocationAuthorization()
+                    //mapViewModel.checkLocationAuthorization()
                     mapViewModel.checkIfLocationManagerIsEnable()
                     //mapViewModel.getRegion()
+                    //mapViewModel.mapLocation
                     print(mapViewModel.mapLocation)
                     
                 }
